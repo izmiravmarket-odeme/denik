@@ -1,0 +1,177 @@
+body {
+    background-image: url('/img/bg.jpg');
+background-size: cover; 
+background-repeat: no-repeat;  
+background-position: center; 
+margin: 0;  
+    font-family: Arial, sans-serif;
+    background-color: #00AEEF; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+
+.header {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+.header img {
+    height: 34px;
+}
+.status-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+}
+
+/* Giriş Formu Alanı */
+.container {
+    background-color: #29b6f6d9;
+    width: 91%;  
+    max-width: 400px;
+
+    border-radius: 9px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+padding-left: 1px;
+padding-right: 1px;
+padding-bottom: 0px;
+padding-top: 5px;
+
+}
+
+.tab {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.tab div {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.tab div.active {
+    border-bottom: 2px solid white;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-family: Montserrat;
+    border: none;
+ 
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+.remember-me {
+display: flex;
+justify-content: flex-end; 
+align-items: center; 
+margin-top: 20px; 
+padding-left: 50%;
+}
+
+.remember-me label {
+margin-right: 10px;  
+font-size: 16px;
+color: #fff;
+}
+
+.toggle-switch {
+position: relative;
+display: inline-block;
+width: 40px;
+height: 20px;
+}
+
+.toggle-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 20px;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 14px;
+width: 14px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: #29B6F6;
+}
+
+input:checked + .slider:before {
+transform: translateX(20px);
+}
+
+.login-button {
+    width: 93%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #3696ff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 15px;
+}
+.forgot-password a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+input:focus {
+outline: none;  
+}
+.alert-message {
+    display: none; 
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+ 
+.alert-message.show {
+    display: block; 
+}
